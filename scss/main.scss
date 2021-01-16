@@ -1,0 +1,353 @@
+@import "_config";
+@import "_loader";
+@import "_footer";
+@import "_someClassesToAddAfterLoad";
+@import "_slider";
+@import "_aboutme";
+@import "_offer";
+@import "_contact";
+
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Basic:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $black;
+  height: 100vh;
+
+  a {
+    text-decoration: none;
+    color: white;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .App {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+.header {
+  z-index: 15;
+  background-color: $black;
+  position: fixed;
+  display: flex;
+  height: 15vh;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 2px $gold solid;
+  .header__logo {
+    width: 45%;
+    height: 90%;
+
+    img {
+      background-color: $black;
+      max-width: 100%;
+      max-height: 100%;
+      margin-left: 1rem;
+
+      overflow: hidden;
+    }
+  }
+}
+
+main {
+  padding-top: 15vh;
+  width: 100%;
+  position: relative;
+}
+.header__nav {
+  display: flex;
+  justify-content: flex-end;
+
+  height: 100%;
+  width: 50%;
+}
+.header__nav__box {
+  display: flex;
+  box-sizing: border-box;
+  z-index: 1;
+  width: 25%;
+  font-size: 1.6rem;
+  transform: rotate(15deg);
+  height: 100%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  &::before {
+    content: "";
+    position: absolute;
+    border-left: 2px $gold solid;
+    top: 0;
+    left: 0;
+
+    width: 95%;
+    height: 100%;
+  }
+  &__text {
+    position: absolute;
+    transform: rotate(-15deg);
+    padding: 0;
+    margin: 0;
+
+    .icon {
+      transform: translateX(45%);
+      font-size: 1.6rem;
+      color: $gold;
+      transition: 0.5s ease;
+    }
+  }
+  &:hover {
+    color: $gold;
+    .icon {
+      color: white;
+    }
+  }
+  &:hover::after {
+    content: "";
+    transform: rotate(-15deg);
+
+    width: 40%;
+    padding: 0;
+    position: absolute;
+    right: 33%;
+    bottom: 33%;
+    height: 2.5px;
+    background-image: $gradient;
+  }
+}
+.ContainerSection {
+  width: 100%;
+  height: 100%;
+  color: white;
+  transition: 2s;
+}
+h2 {
+  font-weight: 400;
+  font-family: "Gentium Basic", serif;
+  font-size: 3.5rem;
+}
+.container {
+  position: relative;
+  min-height: 85vh;
+}
+.menu-btn {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100px;
+  height: 70px;
+  transition: all 0.5s ease-in-out;
+  z-index: 400;
+  &__hamburger {
+    width: 50px;
+    height: 6px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1.5px 5px $gold;
+    transition: all 0.5s ease-in-out;
+    &::after,
+    &::before {
+      transition: all 0.5s ease-in-out;
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 6px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 1.5px 5px $gold;
+    }
+    &::after {
+      transform: translateY(16px);
+    }
+    &::before {
+      transform: translateY(-16px);
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.menu-btn.menu-btn__open .menu-btn__hamburger {
+  transform: rotate(720deg);
+  background: transparent;
+  box-shadow: none;
+
+  &::before {
+    transform: rotate(45deg);
+    box-shadow: none;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    box-shadow: none;
+  }
+}
+.tap-color {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media only screen and (max-width: 2560px) {
+  html {
+    font-size: 20px;
+  }
+  body {
+  }
+}
+@media only screen and (max-width: 1800px) {
+  html {
+    font-size: 17px;
+  }
+  body {
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+  }
+}
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+  body {
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+  .header__nav {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    margin-left: 100%;
+    transition: all 1s;
+
+    &__open {
+      display: flex;
+      margin-left: 0%;
+    }
+  }
+  .header__nav__box {
+    box-sizing: none;
+    margin-left: 200%;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    transform: rotate(0deg);
+    color: white;
+    transition: 0.5s;
+
+    /* background-color: rgba(255, 0, 0, 0.438); */
+    &::before {
+      content: "";
+      position: absolute;
+      border-left: 0;
+      top: 0;
+      left: 0;
+      padding-bottom: 0rem;
+      width: 100%;
+      height: 100%;
+    }
+    &:hover::after {
+      content: "";
+      transform: rotate(0deg);
+      width: 20%;
+      padding: 0;
+      position: absolute;
+      right: 40%;
+      bottom: 35%;
+      height: 2px;
+      background-image: $gradient;
+    }
+    &:nth-child(1) {
+      transition-delay: 0.5s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.7s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.9s;
+    }
+    &:nth-child(4) {
+      transition-delay: 1.1s;
+    }
+    &__text {
+      position: absolute;
+      transform: rotate(0deg);
+      margin: 0;
+      padding: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition-delay: 0s;
+      transition: 0.7s;
+
+      &:hover {
+        color: $gold;
+        .icon {
+          color: white;
+        }
+      }
+
+      .icon {
+        font-size: 3rem;
+      }
+    }
+    &:hover {
+      color: white;
+      .icon {
+        color: $gold;
+      }
+    }
+  }
+  .header__nav.header__nav__open .header__nav__box {
+    margin-left: 0%;
+  }
+  .menu-btn {
+    display: flex;
+  }
+  .header {
+    .header__logo {
+      width: 100%;
+      a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  html {
+    font-size: 8px;
+  }
+  body {
+  }
+}

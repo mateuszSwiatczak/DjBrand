@@ -1,0 +1,411 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aleo&display=swap");
+
+.gridOffer {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 100%;
+  height: 85vh;
+  align-items: center;
+  position: relative;
+}
+.backToOfferMenu {
+  display: none;
+}
+.offerText,
+.offerPhotos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offerPhotos {
+  z-index: 11;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  &__wesele,
+  &__business,
+  &__100dniowka,
+  &__inneImprezy {
+    position: relative;
+    display: flex;
+
+    margin: 0;
+    height: 85%;
+    width: 90%;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 90%;
+      cursor: pointer;
+      border-radius: 10px;
+
+      filter: invert(23%);
+      transition: 2s;
+      &:hover {
+        filter: invert(0%);
+      }
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 12%;
+      left: 5%;
+      font-size: 2rem;
+      color: $offerColor;
+      pointer-events: none;
+      padding: 2%;
+      border: 1px solid $gold;
+      display: inline-block;
+    }
+  }
+}
+.offerText {
+  z-index: 10;
+  width: 500%;
+  overflow: hidden;
+  transition: 2s;
+  height: 100%;
+  &__wesele,
+  &__business,
+  &__100dniowka,
+  &__inneImprezy {
+    width: 25%;
+    margin: 3rem;
+    display: flex;
+    align-items: center;
+    height: 70%;
+    flex-direction: column;
+    p:last-child {
+      font-style: italic;
+    }
+  }
+  &__start {
+    width: 25%;
+    margin: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__wesele {
+    h1 {
+      height: 20%;
+
+      font-family: "Parisienne", cursive;
+      font-size: 3rem;
+      margin: 0;
+    }
+    p {
+      height: 100%;
+      width: 100%;
+
+      strong {
+        font-family: "Parisienne", cursive;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  &__100dniowka {
+    h1 {
+      font-family: "Dancing Script", cursive;
+      height: 20%;
+
+      font-size: 3rem;
+      margin: 0;
+    }
+  }
+  &__business {
+    h1 {
+      font-family: "Orbitron", sans-serif;
+      height: 20%;
+
+      font-size: 3rem;
+      margin: 0;
+    }
+  }
+  &__inneImprezy {
+    h1 {
+      font-family: "Aleo", serif;
+      height: 20%;
+
+      font-size: 3rem;
+      margin: 0;
+    }
+  }
+  &__Contenerborder {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+    background-color: transparent;
+    left: 0;
+    width: 40%;
+    transform: scaleX(1);
+    transition: 0.5s;
+
+    &:after {
+      content: "";
+      width: 92%;
+      height: 100%;
+      border: 2px solid $gold;
+      clip-path: polygon(
+        80% 1%,
+        99% 20%,
+        100% 60%,
+        100% 100%,
+        20% 99%,
+        1% 80%,
+        0 0
+      );
+    }
+  }
+}
+.hue {
+  filter: hue-rotate(720deg);
+  transition: 10s;
+
+  &:hover {
+    filter: hue-rotate(0deg);
+  }
+}
+
+.borderx0 {
+  transform: scaleX(0);
+}
+.transition2s {
+  transition-delay: 2s;
+}
+.offerText__paragraf {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toRight {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem;
+}
+.activeText1 {
+  margin-left: -100%;
+}
+.activeText2 {
+  margin-left: -200%;
+}
+.activeText3 {
+  margin-left: -300%;
+}
+.activeText4 {
+  margin-left: -400%;
+}
+@media only screen and (max-width: 2560px) {
+}
+@media only screen and (max-width: 1800px) {
+}
+
+@media only screen and (max-width: 1440px) {
+}
+@media only screen and (max-width: 1024px) {
+}
+@media only screen and (max-width: 768px) {
+  .gridOffer {
+    display: flex;
+  }
+  .offerPhotos {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+    &__wesele,
+    &__business,
+    &__100dniowka,
+    &__inneImprezy {
+      position: relative;
+      display: flex;
+      margin: 0;
+      height: 25%;
+      width: 80%;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: 90%;
+        cursor: pointer;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      figcaption {
+        position: absolute;
+        bottom: 12%;
+        left: 5%;
+        font-size: 2rem;
+        color: $offerColor;
+        pointer-events: none;
+        padding: 2%;
+        border: 1px solid $gold;
+        display: inline-block;
+      }
+    }
+  }
+  .offerText {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    &__Contenerborder {
+      display: none;
+    }
+    &__wesele,
+    &__business,
+    &__100dniowka,
+    &__inneImprezy {
+      h1 {
+        font-size: 5rem;
+      }
+      p {
+        font-size: 1rem;
+        strong {
+          font-size: 3rem;
+        }
+      }
+      width: 14%;
+      margin-right: 6%;
+    }
+    &__start {
+      width: 14%;
+      margin-right: 6%;
+      visibility: hidden;
+    }
+  }
+  .gridResponsive {
+    margin-left: 70%;
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .backToOfferMenu {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 5%;
+    left: -5%;
+    z-index: 15;
+    background-color: transparent;
+    opacity: 0;
+    display: block;
+    border: none;
+    color: $gold;
+    font-size: 4rem;
+    transition: 1s;
+    &:focus {
+      outline: none;
+    }
+  }
+  .gridOffer {
+    display: flex;
+  }
+  .offerPhotos {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+    &__wesele,
+    &__business,
+    &__100dniowka,
+    &__inneImprezy {
+      position: relative;
+      display: flex;
+      margin: 0;
+      height: 25%;
+      width: 80%;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: 90%;
+        cursor: pointer;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      figcaption {
+        position: absolute;
+        bottom: 12%;
+        left: 5%;
+        font-size: 2rem;
+        color: $offerColor;
+        pointer-events: none;
+        padding: 2%;
+        border: 1px solid $gold;
+        display: inline-block;
+      }
+    }
+  }
+  .offerText {
+    width: 400%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    background-color: black;
+    margin-left: 100%;
+    z-index: 12;
+
+    &__Contenerborder {
+      display: none;
+    }
+    &__wesele,
+    &__business,
+    &__100dniowka,
+    &__inneImprezy,
+    &__start {
+      h1 {
+        font-size: 5rem;
+      }
+      p {
+        font-size: 1.5rem;
+        strong {
+          font-size: 3rem;
+        }
+      }
+      width: 25%;
+      font-size: 2rem;
+      margin: 0;
+      padding: 2rem;
+    }
+    &__start {
+      display: none;
+    }
+  }
+  .displayButton {
+    transition: 1s;
+    opacity: 100;
+    left: 5%;
+  }
+  .gridResponsive {
+    margin-left: 0;
+    width: 100%;
+  }
+  .activeText1 {
+    margin-left: 0;
+  }
+  .activeText2 {
+    margin-left: -100%;
+  }
+  .activeText3 {
+    margin-left: -200%;
+  }
+  .activeText4 {
+    margin-left: -300%;
+  }
+}

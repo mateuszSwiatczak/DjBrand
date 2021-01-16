@@ -1,0 +1,81 @@
+.AboutMeGridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 85vh;
+  width: 100%;
+}
+.AboutMe-Photo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AboutMe-Text {
+  padding-left: 1rem;
+  padding-right: 5rem;
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+.AboutMe-Photo {
+  padding-left: 5rem;
+  clip-path: polygon(0 1%, 54% 0, 85% 100%, 0% 100%);
+  padding-right: 1rem;
+}
+.AboutMe-Photo img {
+  width: 100%;
+  padding: 1rem;
+  max-height: 100%;
+  border-radius: 10px;
+  filter: grayscale(60%);
+}
+.AboutMe-Text__Header__fontStyle {
+  font-family: "Gentium Basic", serif;
+  font-style: italic;
+  font-weight: 700;
+}
+.AboutMe-Text__Header__fontStyleName {
+  font-weight: 400;
+  font-family: "Gentium Basic", serif;
+}
+@media only screen and (min-width: 2400px) {
+  .AboutMe-Text {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .AboutMe-Text {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .AboutMe-Text {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .AboutMeGridContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .PhotoOfTelephone {
+    display: none;
+  }
+  .AboutMe-Photo {
+    padding: 2rem;
+    height: 40%;
+    width: 100%;
+    border-radius: 2rem;
+    img {
+      object-fit: cover;
+      border-radius: 2rem;
+    }
+  }
+  .AboutMe-Text {
+    font-size: 2rem;
+  }
+}
